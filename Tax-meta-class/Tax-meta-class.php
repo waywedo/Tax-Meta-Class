@@ -1764,7 +1764,8 @@ if (! class_exists('Tax_Meta_Class')) :
     {
       delete_option('tax_meta_' . $term_id);
       if (function_exists('delete_term_meta')) {
-        delete_term_meta($term_id);
+        $name = 'tax_meta_' . $term_id ;
+        delete_term_meta($term_id, $name);
       }
     }
 
